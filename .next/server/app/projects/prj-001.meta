@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/projects/layout,_N_T_/projects/[id]/layout,_N_T_/projects/[id]/page,_N_T_/projects/prj-001"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/projects/$d$id/__PAGE__",
+    "/projects/$d$id",
+    "/projects",
+    "/_index",
+    "/_head"
+  ]
+}

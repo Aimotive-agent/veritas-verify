@@ -1,0 +1,151 @@
+import type { Project, KnowledgeArticle, User, DocumentCategory } from "./types";
+
+export const documentCategories: DocumentCategory[] = [
+  { code: "A", label: "เอกสาร A — แบบคำขอ", required: true, count: 3, verified: 3 },
+  { code: "AA", label: "เอกสาร AA — หนังสือรับรอง", required: true, count: 2, verified: 1 },
+  { code: "AB", label: "เอกสาร AB — รายงานการเงิน", required: true, count: 5, verified: 4 },
+  { code: "AC", label: "เอกสาร AC — สัญญาจ้าง", required: false, count: 1, verified: 1 },
+  { code: "AD", label: "เอกสาร AD — หนังสือมอบอำนาจ", required: false, count: 2, verified: 0 },
+  { code: "BA", label: "เอกสาร BA — ทะเบียนพาณิชย์", required: true, count: 2, verified: 2 },
+  { code: "BB", label: "เอกสาร BB — ภ.พ.20", required: true, count: 1, verified: 1 },
+  { code: "CA", label: "เอกสาร CA — บัญชีรายชื่อผู้ถือหุ้น", required: false, count: 1, verified: 1 },
+  { code: "CB", label: "เอกสาร CB — งบดุล", required: true, count: 1, verified: 0 },
+  { code: "DA", label: "เอกสาร DA — แผนผังองค์กร", required: false, count: 2, verified: 2 },
+  { code: "EA", label: "เอกสาร EA — หนังสือรับรองความปลอดภัย", required: false, count: 3, verified: 1 },
+  { code: "FA", label: "เอกสาร FA — ใบอนุญาตประกอบกิจการ", required: true, count: 1, verified: 1 },
+];
+
+export const projects: Project[] = [
+  {
+    id: "prj-001",
+    name: "โครงการตรวจสอบเอกสารจัดซื้อจัดจ้าง Q3/2569",
+    agency: "หน่วยงาน A",
+    description: "ตรวจสอบเอกสารประกอบการจัดซื้อจัดจ้างโครงการพัฒนาระบบดิจิทัล",
+    status: "in_progress",
+    documentCount: 12,
+    verifiedCount: 8,
+    rejectedCount: 2,
+    createdAt: "2026-07-15T09:00:00Z",
+    updatedAt: "2026-08-03T08:00:00Z",
+    documentCategories: documentCategories.slice(0, 6),
+  },
+  {
+    id: "prj-002",
+    name: "ตรวจสอบคุณสมบัตินิติบุคคลผู้เสนอราคา",
+    agency: "หน่วยงาน B",
+    description: "ตรวจสอบเอกสารนิติบุคคลตามระเบียบ DBD สำหรับผู้เสนอราคาโครงการก่อสร้าง",
+    status: "completed",
+    documentCount: 8,
+    verifiedCount: 8,
+    rejectedCount: 0,
+    createdAt: "2026-06-01T09:00:00Z",
+    updatedAt: "2026-07-20T14:00:00Z",
+    documentCategories: documentCategories.slice(0, 4),
+  },
+  {
+    id: "prj-003",
+    name: "ตรวจสอบเอกสารขอรับการส่งเสริม BOI",
+    agency: "หน่วยงาน A",
+    description: "ตรวจสอบเอกสารประกอบคำขอรับการส่งเสริมการลงทุนตามมาตรา 36",
+    status: "draft",
+    documentCount: 0,
+    verifiedCount: 0,
+    rejectedCount: 0,
+    createdAt: "2026-08-02T10:00:00Z",
+    updatedAt: "2026-08-02T10:00:00Z",
+    documentCategories: [],
+  },
+  {
+    id: "prj-004",
+    name: "ตรวจสอบเอกสารประมูลงานระบบ IT",
+    agency: "หน่วยงาน B",
+    description: "ตรวจสอบเอกสารประมูลงานพัฒนาระบบสารสนเทศ",
+    status: "in_progress",
+    documentCount: 20,
+    verifiedCount: 14,
+    rejectedCount: 3,
+    createdAt: "2026-07-25T08:00:00Z",
+    updatedAt: "2026-08-02T16:00:00Z",
+    documentCategories: documentCategories,
+  },
+  {
+    id: "prj-005",
+    name: "ตรวจสอบเอกสารตรวจรับงานก่อสร้าง",
+    agency: "หน่วยงาน A",
+    description: "ตรวจสอบเอกสารการตรวจรับงานงวดที่ 3 โครงการก่อสร้างอาคารสำนักงาน",
+    status: "completed",
+    documentCount: 15,
+    verifiedCount: 14,
+    rejectedCount: 1,
+    createdAt: "2026-05-15T09:00:00Z",
+    updatedAt: "2026-06-30T11:00:00Z",
+    documentCategories: documentCategories.slice(0, 8),
+  },
+];
+
+export const knowledgeArticles: KnowledgeArticle[] = [
+  {
+    id: "km-001",
+    title: "ระบบวัดชื่อตัวอ้างการจัด ระเบียบการตรวจการคลัง",
+    agency: "ทุกหน่วยงาน",
+    category: "ระเบียบการคลัง",
+    content:
+      "ระเบียบกระทรวงการคลังว่าด้วยการจัดซื้อจัดจ้างและการบริหารพัสดุภาครัฐ พ.ศ. 2560 กำหนดหลักเกณฑ์การตรวจสอบเอกสารผู้เสนอราคา การตรวจสอบคุณสมบัติ และวิธีการจัดซื้อจัดจ้างแต่ละวิธี",
+    regulations: ["พรบ.จัดซื้อจัดจ้างฯ 2560", "ระเบียบกระทรวงการคลังฯ 2560", "มติ ครม. ที่เกี่ยวข้อง"],
+  },
+  {
+    id: "km-002",
+    title: "วิธีการค้นหาข้อมูลตามวัตถุประสงค์ของนักวิเคราะห์",
+    agency: "หน่วยงาน A",
+    category: "วิธีการปฏิบัติงาน",
+    content:
+      "คู่มือการสืบค้นและวิเคราะห์ข้อมูลสำหรับการตรวจสอบเอกสาร ประกอบด้วยขั้นตอนการตรวจสอบความถูกต้อง ครบถ้วน และความสอดคล้องของเอกสารตามวัตถุประสงค์ของโครงการ",
+    regulations: ["คู่มือนักวิเคราะห์ 2568", "มาตรฐานการตรวจสอบภายใน"],
+  },
+  {
+    id: "km-003",
+    title: "วิธีการค้นหาข้อมูลตามระเบียบนิติบุคคล (DBD)",
+    agency: "ทุกหน่วยงาน",
+    category: "นิติบุคคล",
+    content:
+      "แนวทางการตรวจสอบข้อมูลนิติบุคคลผ่านระบบ DBD e-Service การตรวจสอบหนังสือรับรอง ภ.พ.20 งบการเงิน และการตรวจสอบประวัติการถูกเพิกถอน/ระงับการดำเนินกิจการ",
+    regulations: ["พรบ.ทะเบียนพาณิชย์ 2499", "พรบ.การบัญชี 2543", "ประกาศ DBD"],
+  },
+  {
+    id: "km-004",
+    title: "หลักเกณฑ์ ระเบียบ ตามโครงการหน่วยงาน A",
+    agency: "หน่วยงาน A",
+    category: "ระเบียบหน่วยงาน",
+    content:
+      "ประมวลหลักเกณฑ์และระเบียบปฏิบัติของหน่วยงาน A ว่าด้วยการจัดซื้อจัดจ้าง การบริหารสัญญา การตรวจรับงาน และการเบิกจ่ายเงิน",
+    regulations: ["ระเบียบหน่วยงาน A ฉบับที่ 12/2568", "ประกาศหน่วยงาน A ที่ 45/2568"],
+  },
+  {
+    id: "km-005",
+    title: "หลักเกณฑ์ ระเบียบ ตามโครงการหน่วยงาน B",
+    agency: "หน่วยงาน B",
+    category: "ระเบียบหน่วยงาน",
+    content:
+      "ประมวลหลักเกณฑ์และระเบียบปฏิบัติของหน่วยงาน B ว่าด้วยการประมูลด้วยวิธีอิเล็กทรอนิกส์ การตรวจสอบคุณสมบัติผู้เสนอราคา และหลักเกณฑ์การพิจารณาผล",
+    regulations: ["ระเบียบหน่วยงาน B ฉบับที่ 8/2568", "ประกาศหน่วยงาน B ที่ 23/2568"],
+  },
+  {
+    id: "km-006",
+    title: "หลักเกณฑ์ ระเบียบ ตามโครงการหน่วยงาน C",
+    agency: "หน่วยงาน C",
+    category: "ระเบียบหน่วยงาน",
+    content:
+      "ประมวลหลักเกณฑ์และระเบียบปฏิบัติของหน่วยงาน C ว่าด้วยการขอรับการส่งเสริม การรายงานผล และการตรวจสอบภายหลัง",
+    regulations: ["ระเบียบหน่วยงาน C ฉบับที่ 5/2568", "ประกาศหน่วยงาน C ที่ 12/2568"],
+  },
+];
+
+export const users: User[] = [
+  { id: "u-001", name: "สมชาย ใจดี", role: "admin", agency: "หน่วยงาน A", lineId: "U123456789", lastActive: "2026-08-03T08:00:00Z" },
+  { id: "u-002", name: "วิภา รักชาติ", role: "officer", agency: "หน่วยงาน A", lineId: "U987654321", lastActive: "2026-08-03T07:45:00Z" },
+  { id: "u-003", name: "ก้องภพ แสนกล้า", role: "reviewer", agency: "หน่วยงาน A", lineId: "U555555555", lastActive: "2026-08-02T16:30:00Z" },
+  { id: "u-004", name: "นภา สุขศรี", role: "admin", agency: "หน่วยงาน B", lineId: "U111111111", lastActive: "2026-08-03T07:00:00Z" },
+  { id: "u-005", name: "พงศ์ มั่นคง", role: "officer", agency: "หน่วยงาน B", lineId: "U222222222", lastActive: "2026-08-02T15:00:00Z" },
+  { id: "u-006", name: "รัตนา พรหมดี", role: "reviewer", agency: "หน่วยงาน B", lineId: "U333333333", lastActive: "2026-08-02T17:00:00Z" },
+  { id: "u-007", name: "จิตติ พิทักษ์", role: "viewer", agency: "หน่วยงาน C", lastActive: "2026-08-01T10:00:00Z" },
+];

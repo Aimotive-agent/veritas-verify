@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/page": "/admin",
+  "/favicon.ico/route": "/favicon.ico",
+  "/knowledge/page": "/knowledge",
+  "/login/page": "/login",
+  "/page": "/",
+  "/projects/[id]/page": "/projects/[id]",
+  "/projects/new/page": "/projects/new",
+  "/projects/page": "/projects",
+  "/prompts/page": "/prompts",
+  "/users/page": "/users"
+}
